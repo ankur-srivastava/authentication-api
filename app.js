@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routers
 app.use('/api/auth', authRoute)
 
-const dbUrl = `mongodb+srv://admin:${process.env.DB_PASS}@cluster0.gavbp.mongodb.net/padakoo?retryWrites=true&w=majority`;
+const dbUrl = `mongodb+srv://admin:${process.env.DB_PASS}@cluster0.gavbp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('DB Connected');
